@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Driver Manage</title>
+    <link href="assests/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<section class="container-fluid bg-info p-3">
+    <h1 class="text-white">Driver Manage</h1>
+</section>
+<section class="container-fluid">
+    <section class="row mt-3">
+        <section class="col-md-4">
+            <form id="frmCustomer">
+                <div>
+                    <label class="form-label" for="driverId">Driver ID</label>
+                    <input class="form-control" id="driverId" name="id" type="text">
+                </div>
+                <div>
+                    <label class="form-label" for="address">First Name</label>
+                    <input class="form-control" id="address" name="fisrtName" type="text">
+                </div>
+                <div>
+                    <label class="form-label" for="contatNumber">Last Name</label>
+                    <input class="form-control" id="contatNumber" name="lastName" type="text">
+                </div>
+                <div>
+                    <label class="form-label" for="firstName">Contact</label>
+                    <input class="form-control" id="firstName" name="contact" type="text">
+                </div>
+                <div>
+                    <label class="form-label" for="lastName">Address</label>
+                    <input class="form-control" id="lastName" name="address" type="text">
+                </div>
+                <div>
+                    <label class="form-label" for="nic">NIC</label>
+                    <input class="form-control" id="nic" name="nic" type="text">
+                </div>
+                <div class="btn-group mt-4">
+                    <button class="btn btn-primary" id="btnSave" type="button">Save</button>
+                    <button class="btn btn-info" id="btnSearch" type="button">Search</button>
+                    <button class="btn btn-light" id="btnUpdate" type="button">Update</button>
+                    <button class="btn btn-danger" id="btnRemove" type="button">Remove</button>
+                    <button class="btn btn-warning" id="btnGetAll" type="button">Get All</button>
+                </div>
+            </form>
+        </section>
+        <section class="col-md-8">
+            <table class="table table-hover table-bordered">
+                <thead class="bg-danger text-white">
+                <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Contact</th>
+                    <th>Address</th>
+                    <th>NIC</th>
+                </tr>
+                </thead>
+                <tbody id="tBody">
+                </tbody>
+            </table>
+        </section>
+    </section>
+</section>
+
+<script src="assests/js/jquery-3.6.0.min.js"></script>
+<script>
+
+
+
+    $("#btnSave").click(function () {
+
+        let driverId = $("#driverId").val();
+        let address = $("#address").val();
+        let contatNumber = $("#contatNumber").val();
+        let firstName = $("#firstName").val();
+        let lastName = $("#lastName").val();
+        let nic = $("#nic").val();
+
+        $.ajax({
+            method: "POST",
+            url: "http://localhost:8020/CarRent_SpringMVC_master_war_exploded/carrent/driver",
+            contentType: 'application/json',
+            async: true,
+            data: JSON.stringify({
+                driverId: driverId,
+                address: address,
+                contatNumber: contatNumber,
+                firstName: firstName,
+                lastName:lastName,
+                nic:nic
+            }),
+
+            success: function (data) {
+                console.log(data);
+                alert("Successfully Added");
+
+            }
+
+        });
+
+    });
+
+</script>
+<script src="assests/js/bootstrap.min.js"></script>
+</body>
+</html>

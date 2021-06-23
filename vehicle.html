@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vehicle</title>
+    <link href="assests/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        #Search{
+            width: 400px;
+        }
+
+        /*#date {*/
+        /*    display: block;*/
+        /*    font: 1rem 'Fira Sans', sans-serif;*/
+        /*}*/
+
+        /*input,*/
+        /*label {*/
+        /*    margin: .4rem 0;*/
+        /*}*/
+
+    </style>
+
+</head>
+<body>
+<section class="container-fluid bg-info p-3">
+    <h1 class="text-white">Rent Form</h1>
+</section>
+<section class="container-fluid">
+    <section class="row mt-3">
+        <section class="col-md-4">
+            <form id="frmCustomer">
+                <div>
+                    <label class="form-label" for="adminID">Rent ID</label>
+                    <input class="form-control" id="adminID" name="id" type="text">
+                </div>
+
+                <div>
+                    <label class="form-label" for="coutomerID">Customer ID</label>
+                    <input class="form-control" id="coutomerID" name="customerID" type="text">
+                </div>
+                <div>
+                    <label class="form-label" for="vehicleID">Vehicle ID</label>
+                    <input class="form-control" id="vehicleID" name="vehicle id" type="text">
+                </div>
+                <div>
+                    <label class="form-label" for="driverID">Driver ID</label>
+                    <input class="form-control" id="driverID" name="driverID" type="text">
+                </div>
+
+                <br>
+                <br>
+
+                <div id="today">
+                    <label for="todayDate">Today:   </label>
+
+                    <input type="date" id="todayDate" name="trip-start"
+                           value="2021-06-20"
+                           min="2021-06-20" max="2030-01-10">
+                </div>
+
+                <br>
+                <br>
+
+                <div id="pickoff">
+                <label for="startdate">Pick Off:</label>
+
+                <input type="date" id="startdate" name="trip-start"
+                       value="2021-06-20"
+                       min="2021-06-20" max="2030-01-10">
+                </div>
+
+                <br>
+                <br>
+
+                <div id="pickup">
+                    <label for="enddate">Pick Up:</label>
+
+                    <input type="date" id="enddate" name="trip-start"
+                           value="2021-06-20"
+                           min="2021-06-20" max="2030-01-10">
+                </div>
+
+                <br>
+                <div>
+                    <label class="form-label" for="reason">Reason</label>
+                    <input class="form-control" id="reason" name="reason" type="text">
+                </div>
+                <div>
+                    <label class="form-label" for="status">Status</label>
+                    <input class="form-control" id="status" name="status" type="text">
+                </div>
+                <div>
+                    <label class="form-label" for="totalFee">Total Fee</label>
+                    <input class="form-control" id="totalFee" name="totalFee" type="text">
+                </div>
+
+
+                <div class="btn-group mt-4">
+                    <button class="btn btn-primary" id="btnSave" type="button">Save</button>
+                    <button class="btn btn-info" id="btnSearch" type="button">Search</button>
+                    <button class="btn btn-light" id="btnUpdate" type="button">Update</button>
+                    <button class="btn btn-danger" id="btnRemove" type="button">Remove</button>
+                    <button class="btn btn-warning" id="btnGetAll" type="button">Get All</button>
+                </div>
+            </form>
+        </section>
+
+
+
+
+        <section class="col-md-8">
+            <div >
+                <input id="Search" type="text" placeholder="Search Vehicle" />
+                <button class="btn btn-warning" type="button">Search</button>
+            </div>
+
+            <br>
+
+<!--        <section class="col-md-3">-->
+<!--            <div id="date">-->
+<!--                <label for="startdate">Today:</label>-->
+
+<!--                <input type="date" id="date" name="trip-start"-->
+<!--                       value="2021-06-20"-->
+<!--                       min="2021-06-20" max="2030-01-10">-->
+<!--            </div>-->
+<!--        </section>-->
+
+            <table class="table table-hover table-bordered">
+                <thead class="bg-danger text-white">
+                <tr>
+                    <th>ID</th>
+                    <th>Brand</th>
+                    <th>Color</th>
+                    <th>Daily Km</th>
+                    <th>Monthly Km</th>
+                    <th>Monthly Rent</th>
+                    <th>Daily Rent</th>
+                    <th>Extra Fee</th>
+                    <th>Fuel Type</th>
+                    <th>Model</th>
+                    <th>Passenger No</th>
+                    <th>Reg No</th>
+                    <th>Transmission Type</th>
+                    <th>Type</th>
+                </tr>
+                </thead>
+                <tbody id="tBody">
+                </tbody>
+            </table>
+        </section>
+    </section>
+</section>
+
+<script src="assests/js/bootstrap.min.js"></script>
+</body>
+</html>
